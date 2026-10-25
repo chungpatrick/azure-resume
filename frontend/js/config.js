@@ -1,0 +1,2 @@
+const functionApiURL = "https://getresumecounter-new-c2f8ddeyeag7cjb0.centralus-01.azurewebsites.net/api/GetResumeCounter?code=XoexKB63jwMrzY6U9shPP3Kpsy64XrP45r7hPGRqU3C1AzFueDuF5Q==";
+const localFunctionApi = 'http://localhost:7071/api/GetResumeCounter';
