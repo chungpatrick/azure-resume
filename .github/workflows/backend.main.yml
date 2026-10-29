@@ -6,7 +6,7 @@ on:
         paths:
           - 'backend/**'
 env:
-  AZURE_FUNCTION_NAME: GetResumeCounter-New
+  AZURE_FUNCTION_NAME: GetResumeCounter
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'
   DOTNET_VERSION: '8.0.x'
 
