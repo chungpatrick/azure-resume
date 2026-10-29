@@ -12,10 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: azure/login@v1
+    - uses: actions/checkout@v3
+    - uses: azure/login@v2
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
 
     - name: Upload to blob storage
       uses: azure/CLI@v1
