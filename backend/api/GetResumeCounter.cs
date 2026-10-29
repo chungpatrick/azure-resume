@@ -21,7 +21,7 @@ namespace Company.Function
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            //Here is where the counter is incremented.
+            //Here is where the counter is incremented. 
 
             counter.Count += 1;
 
