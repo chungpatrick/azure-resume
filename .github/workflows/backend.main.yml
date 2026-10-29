@@ -1,35 +1,29 @@
 name: deploy_backend
 #Deploys when push is made from the backend folder
-
 on:
     push:
         branches: [ main ]
         paths:
           - 'backend/**'
-
 env:
-  AZURE_FUNCTION_NAME: GetResumeCounter
+  AZURE_FUNCTION_NAME: GetResumeCounter-New
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'
   DOTNET_VERSION: '8.0.x'
-
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: 'Checkout GitHub Action'
-      uses: actions/checkout@main
-
+      uses: actions/checkout@v4
     - name: 'Login via Azure CLI' 
       uses: azure/login@v2
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
     - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-
     - name: 'Resolve Project Dependencies Using DotNet'
       shell: pwsh
       run: |
@@ -47,4 +41,5 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTION_NAME}}
         package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/output'
+
 
