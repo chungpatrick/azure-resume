@@ -21,6 +21,8 @@ namespace Company.Function
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
+            //Here is where the counter is incremented. The updated counter is then returned to the client and written back to Cosmos DB.
+
             counter.Count += 1;
 
             return new CounterResponse
